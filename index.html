@@ -16,37 +16,40 @@
     <main>
         
         <!-- Selection avant partie -->
-        <section id="selection">
-            <p>Consignes : </p>
+        <section class="section" id="selection">
+            <h2>Consignes : </h2>
             <p>Il y a un 50 allumettes. Chacun à son tour, le/les joueur(s) ôtent entre 1 et 6 allumettes. 
             <br> Celui qui ôte la dernière allumette gagne.</p>
 
-            <label for="qte_joueur">Combien de joueur ?</label>
-            <select id="qte_joueur">
-                <option value="1">1 joueur</option>
-                <option value="2">2 joueurs</option>
-            </select>
-            <button id="btnCommencer">Commencer la partie</button>
+            <div>
+                <label for="qte_joueur">Combien de joueur ?</label>
+                <select id="qte_joueur">
+                    <option value="1">1 joueur</option>
+                    <option value="2">2 joueurs</option>
+                </select>
+            </div>
+
+            <button class="btn" id="btnCommencer">Commencer la partie</button>
         </section>
 
         <!-- Partie -->
-        <section id="partie" class="cache">
+        <section id="partie" class="section cache">
             <h2 id="statutJoueur"></h2>
-            <h3>Allumettes restantes : <span id="nbAllumettes"></span></h3>
+            <p>Allumettes restantes : <span id="nbAllumettes"></span></p>
 
             <div id="tours">
                 <label for="choixJoueur">Combien d'allumettes retirer (1 à 6) ? </label>
                 <input type="number" id="choixJoueur" min="1" max="6" value="1">
-                <button id="btnValider">Retirer</button>
+                <button class="btn" id="btnValider">Retirer</button>
             </div>
         
             <p id="message" class="erreur"></p>
         </section>
 
         <!-- Fin de partie -->
-        <section id="fin" class="cache">
-            <p id="messageGagnant" class="success"></p>
-            <button id="btnRecommencer">RECOMMENCER</button>
+        <section id="fin" class="section cache">
+            <h2 id="messageGagnant" class="success"></h2>
+            <button class="btn" id="btnRecommencer">RECOMMENCER</button>
         </section>
 
     </main>
