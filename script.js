@@ -60,4 +60,35 @@ if (choix > resteAllumette) {
 resteAllumette -= choix
 txtNbAllumettes.innerText = resteAllumette
 
+// Fin de partie
+if (resteAllumette === 0) {
+    afficher(fin)
+    if (qteJoueur === 2) {
+        txtMessageGagnant.innerText = `Le Joueur ${joueurActuel} gagne`
+    } else {
+        txtMessageGagnant.innerText = "J'ai plus d'allumette pour toi désolé !"
+    }
+    return
+}
 
+// 4. Alternance entre 2 joueurs)
+if (qteJoueur === 2) {
+    joueurActuel = 3 - joueurActuel 
+    txtStatutJoueur.innerText = `Tour du Joueur ${joueurActuel}`
+}
+inputChoixJoueur.value = 1 
+}
+
+btnValider.addEventListener("click", jouerTour)
+
+// Recommencer
+const reinitialiserJeu = () => {
+    resteAllumette = 50
+    joueurActuel = 1
+    txtMessage.innerText = ""
+    inputChoixJoueur.value = 1
+
+    afficher(selection)
+}
+
+btnRecommencer.addEventListener("click", reinitialiserJeu)
