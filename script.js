@@ -23,3 +23,21 @@ const afficher = (ecran) => {
   fin.classList.add('cache')
   ecran.classList.remove('cache')
 }
+
+// Commencer la partie
+btnCommencer.addEventListener("click", () => {
+
+// Aidé via IA
+qteJoueur = +selectQteJoueur.value
+// 
+
+txtNbAllumettes.innerText = resteAllumette
+
+// Section partie
+afficher(partie)
+if (qteJoueur === 1) {
+    txtStatutJoueur.innerText = "Mode Solo"
+} else {
+    txtStatutJoueur.innerText = `Joueur ${joueurActuel}`
+}
+})
