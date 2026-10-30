@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata JS 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Jeu des allumettes</h1>
+    </header>
+
+    <main>
+        
+        <!-- Selection avant partie -->
+        <section id="selection">
+            <p>Consignes : </p>
+            <p>Il y a un 50 allumettes. Chacun à son tour, le/les joueur(s) ôtent entre 1 et 6 allumettes. 
+            <br> Celui qui ôte la dernière allumette gagne.</p>
+
+            <label for="qte_joueur">Combien de joueur ?</label>
+            <select id="qte_joueur">
+                <option value="1">1 joueur</option>
+                <option value="2">2 joueurs</option>
+            </select>
+            <button id="btnCommencer">Commencer la partie</button>
+        </section>
+
+        <!-- Partie -->
+        <section id="partie" class="cache">
+            <h2 id="statutJoueur"></h2>
+            <h3>Allumettes restantes : <span id="nbAllumettes"></span></h3>
+
+            <div id="tours">
+                <label for="choixJoueur">Combien d'allumettes retirer (1 à 6) ? </label>
+                <input type="number" id="choixJoueur" min="1" max="6" value="1">
+                <button id="btnValider">Retirer</button>
+            </div>
+        
+            <p id="message" class="erreur"></p>
+        </section>
+
+        <!-- Fin de partie -->
+        <section id="fin" class="cache">
+            <p id="messageGagnant" class="success"></p>
+            <button id="btnRecommencer">RECOMMENCER</button>
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>&copy; by Nico</p>
+
+    </footer>
+
+</body>
+</html>
