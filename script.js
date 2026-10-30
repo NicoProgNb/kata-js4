@@ -18,10 +18,10 @@ const inputChoixJoueur = document.getElementById("choixJoueur")
 
 // Afficher l'ecran actifs
 const afficher = (ecran) => {
-  selection.classList.add('cache')
-  partie.classList.add('cache')
-  fin.classList.add('cache')
-  ecran.classList.remove('cache')
+    selection.classList.add('cache')
+    partie.classList.add('cache')
+    fin.classList.add('cache')
+    ecran.classList.remove('cache')
 }
 
 // Commencer la partie
@@ -41,3 +41,23 @@ if (qteJoueur === 1) {
     txtStatutJoueur.innerText = `Joueur ${joueurActuel}`
 }
 })
+
+// Tour de jeu
+const jouerTour = () => {
+const choix = +inputChoixJoueur.value
+txtMessage.innerText = "" 
+
+// Conditions à respecter
+if (isNaN(choix) || choix < 1 || choix > 6) {
+    txtMessage.innerText = "Erreur : Choisissez un nombre entre 1 et 6."
+    return 
+}
+if (choix > resteAllumette) {
+    txtMessage.innerText = `Erreur : Il ne reste que ${resteAllumette} allumette(s).`
+    return
+}
+
+resteAllumette -= choix
+txtNbAllumettes.innerText = resteAllumette
+
+
