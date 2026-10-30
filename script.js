@@ -74,7 +74,7 @@ if (resteAllumette === 0) {
 // 4. Alternance entre 2 joueurs)
 if (qteJoueur === 2) {
     joueurActuel = 3 - joueurActuel 
-    txtStatutJoueur.innerText = `Tour du Joueur ${joueurActuel}`
+    txtStatutJoueur.innerText = `Joueur ${joueurActuel}`
 }
 inputChoixJoueur.value = 1 
 }
